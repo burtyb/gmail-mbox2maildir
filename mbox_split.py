@@ -41,7 +41,7 @@ def main(argv):
 			saved = False
 			for label in gmail_labels.split(','):
 				if label != "important" and label != "unread" and label != "starred" and label != "newsletters":
-					box_name = prefix + label.title().replace(os.pathsep, '.') + ".mbox"
+					box_name = prefix + label.title().replace(os.sep, '.') + ".mbox"
 					if box_name not in boxes:
 						boxes[box_name] = mailbox.mbox(box_name, None, True)
 					boxes[box_name].add(message)
